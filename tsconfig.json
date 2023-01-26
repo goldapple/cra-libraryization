@@ -20,5 +20,6 @@
     "declarationDir": "./dist",
     "outDir": "./dist"
   },
-  "include": ["src/custom.d.ts", "src/**/*"]
+  "include": ["src/custom.d.ts", "src/**/*"],
+  "exclude": ["./config"]
 }
