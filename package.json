@@ -1,5 +1,8 @@
 {
   "name": "cra-libraryization",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
