@@ -3,7 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
-
+/** 직접 추가 */
+process.env.BABEL_ENV = 'production';
+process.env.NODE_ENV = 'production';
 // Make sure that including paths.js after env.js will read .env variables.
 delete require.cache[require.resolve('./paths')];
 
