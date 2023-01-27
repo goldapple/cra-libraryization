@@ -1,4 +1,7 @@
 import { Accordion_Box, Accordion_List, Accordion_Row } from '.';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from 'styles/theme';
+
 type AccordionPropsType = {
   state: 'Box' | 'List' | 'Row';
   /** 카테고리(state가 List인 경우 활성 사용 가능) */
@@ -12,9 +15,24 @@ type AccordionPropsType = {
 };
 /** state에 따른 아코디언 분류 컴포넌트 */
 const Accordion = (props: AccordionPropsType) => {
-  if (props.state === 'Box') return <Accordion_Box {...props} />;
-  else if (props.state === 'List') return <Accordion_List {...props} />;
-  else return <Accordion_Row {...props} />;
+  if (props.state === 'Box')
+    return (
+      <ThemeProvider theme={defaultTheme}>
+        <Accordion_Box {...props} />
+      </ThemeProvider>
+    );
+  else if (props.state === 'List')
+    return (
+      <ThemeProvider theme={defaultTheme}>
+        <Accordion_List {...props} />{' '}
+      </ThemeProvider>
+    );
+  else
+    return (
+      <ThemeProvider theme={defaultTheme}>
+        <Accordion_Row {...props} />
+      </ThemeProvider>
+    );
 };
 
 Accordion.defaultProps = {
