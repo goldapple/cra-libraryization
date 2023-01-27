@@ -15,24 +15,9 @@ type AccordionPropsType = {
 };
 /** state에 따른 아코디언 분류 컴포넌트 */
 const Accordion = (props: AccordionPropsType) => {
-  if (props.state === 'Box')
-    return (
-      <ThemeProvider theme={defaultTheme}>
-        <Accordion_Box {...props} />
-      </ThemeProvider>
-    );
-  else if (props.state === 'List')
-    return (
-      <ThemeProvider theme={defaultTheme}>
-        <Accordion_List {...props} />{' '}
-      </ThemeProvider>
-    );
-  else
-    return (
-      <ThemeProvider theme={defaultTheme}>
-        <Accordion_Row {...props} />
-      </ThemeProvider>
-    );
+  if (props.state === 'Box') return <Accordion_Box {...props} />;
+  else if (props.state === 'List') return <Accordion_List {...props} />;
+  else return <Accordion_Row {...props} />;
 };
 
 Accordion.defaultProps = {
